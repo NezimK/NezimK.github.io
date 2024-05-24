@@ -1,7 +1,8 @@
 @media screen and (max-width: 767.98px) {
   /****** General *****/
   body {
-    margin: 0%;
+    margin: 0;
+    font-family: "Roboto", serif;
   }
   ul {
     list-style-type: none;
@@ -12,12 +13,35 @@
   }
   h1 {
     color: black;
+    font-family: "Roboto";
   }
   .cta {
     border-radius: 25px;
     background: linear-gradient(#9356DC, #FF79DA);
     padding: 13px 18px;
     color: white;
+    box-sizing: content-box;
+  }
+  .card {
+    border-radius: 15px;
+    background-color: #FFF;
+    margin-bottom: 15px;
+  }
+  .card img {
+    border-radius: 20px 20px 0px 0px;
+    width: 100%;
+    height: 231px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .card-txt {
+    padding: 0px 0px 15px 15px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .card-txt__subtitle {
+    font-size: 17px;
+    font-weight: 300;
   }
   /*******HEADER*******/
   header {
@@ -30,23 +54,46 @@
   }
   .location {
     background-color: #EAEAEA;
+    display: flex;
+    align-items: center;
   }
   #LogoHeader {
     width: 200px;
     height: 34px;
   }
-  .card {
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  .card img {
-    width: 100%;
-  }
   /*****BODY*****/
+  /********FONCTIONNEMENT*******/
   .reservation {
     display: flex;
     flex-direction: column;
     text-align: center;
+    background-color: #F6F6F6;
+  }
+  .operation {
+    color: #000;
+    padding: 18px;
+  }
+  .operation .title__operation {
+    font-size: 24px;
+  }
+  .operation .button__operation {
+    border-radius: 20px;
+    background-color: #F6F6F6;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .operation .text__operation {
+    margin-left: 25px;
+  }
+  /********RESTAURANTS********/
+  .restaurants {
+    background-color: #F6F6F6;
+    padding: 18px;
   }
   /*****FOOTER******/
   Footer {
@@ -56,12 +103,16 @@
     align-items: flex-start;
     padding: 22px 20px;
   }
+  .footer-txt {
+    display: flex;
+    padding: 8px;
+  }
   #LogoFooter {
     width: 137px;
     height: 27px;
-    color: white;
+    color: #FFF;
   }
   .fa-utensils {
-    color: white;
+    color: #FFF;
   }
 }/*# sourceMappingURL=main.css.map */
