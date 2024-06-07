@@ -5,11 +5,6 @@ $light-grey: #F6F6F6;
 $black: #000;
 $white: #FFF;
 
-@mixin mobile-only {
-    @media screen and (max-width: 767.98px) {
-
-    }
-}
 @mixin desktop-version {
     @media screen and (min-width: 767.98px) {
       @content;
@@ -103,7 +98,6 @@ $white: #FFF;
         }
     }
 
-    .card {}
     /*****FOOTER******/
 
     Footer {
