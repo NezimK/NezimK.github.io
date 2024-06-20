@@ -9,24 +9,115 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
     <title>Menu - Le délice des sens</title>
 </head>
 
 <body>
     <header>
-        <img src="/assets/icons/ohmyfood.png" alt="Logo oh my food">
-        <p>Paris, Belleville</p>
+        <a href="/index.html">
+            <i class="fa-solid fa-arrow-left"></i>
+            <img id="LogoHeader" src="/assets/icons/ohmyfood.png" alt="Logo oh my food">
+        </a>
     </header>
+    <div class="top\_image">
+        <img src="/assets/img/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
+            alt="Photo du Restaurant Le délice des sens">
+    </div>
     <main>
+        <section class="menu">
+            <div class="container">
+                <div class="menu-title">
+                    <h1 class="menu-title-text">Le délice des sens</h1>
+                    <input type="checkbox" id="heart" class="heart-checkbox">
+                    <label for="heart" class="heart-label"><i class="fa-regular fa-heart fa-xl"></i></label>
+                </div>
+                <section class="menu-card">
+                    <h2 class="type-menu">Entrées</h2>
 
+                    <article class="card">
+                        <p class="card-text"><strong>Tartare de thon</strong><br>
+                            Assaisonné au yuzu
+                            <span class="card-price">25€</span>
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <p class="card-text"><strong>Bouchée de homard croustillant</strong><br>
+                            Et sa farandole de petits légumes
+                            <span class="card-price">35€</span>
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <p class="card-text"><strong>Poulet rôti aux herbes de Provence</strong><br>
+                            Et sa crème de truffe
+                            <span class="card-price">40€</span>
+                        </p>
+                    </article>
+
+                    <h2 class="type-menu">Plats</h2>
+
+                    <article class="card">
+                        <p class="card-text"><strong>Poulet rôti aux herbes de Provence</strong><br>
+                            Et sa crème de truffe
+                            <span class="card-price">40€</span>
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <p class="card-text"><strong>Langouste rôtie</strong><br>
+                            Et ses légumes de saison
+                            <span class="card-price">35€</span>
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <p class="card-text"><strong>Côte de bœuf Angus</strong><br>
+                            Et sa purée de panais
+                            <span class="card-price">44€</span>
+                        </p>
+                    </article>
+
+                    <h2 class="type-menu">Desserts</h2>
+
+                    <article class="card">
+                        <p class="card-text"><strong>Farandole de desserts</strong><br>
+                            Du chef
+                            <span class="card-price">18€</span>
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <p class="card-text"><strong>Crème brulée</strong><br>
+                            Revisitée
+                            <span class="card-price">22€</span>
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <p class="card-text"><strong>Tiramisu </strong><br>
+                            À la noisette
+                            <span class="card-price">23€</span>
+                        </p>
+                    </article>
+                </section>
+
+                <div>
+                    <a href="#" class="cta">Commander</a>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
-        <img class="logo-footer" src="../assets/icons/ohmyfood.png" alt="Logo oh my food">
+        <img id="LogoFooter" src="/assets/icons/ohmyfood.png" alt="Logo oh my food">
         <ul>
-            <li>Proposer un restaurant</li>
-            <li>Devenir partenaire</li>
-            <li>Mentions légales</li>
-            <li>Contacts</li>
+            <li class="footer-text"><i class="fa-solid fa-utensils"></i><a href="#">Proposer un restaurant</a></li>
+            <li class="footer-text"><i class="fa-solid fa-handshake-angle"></i><a href="#">Devenir partenaire</a></li>
+            <li class="footer-text"><a href="#">Mentions légales</a></li>
+            <li class="footer-text"><a href="#">Contacts</a></li>
         </ul>
     </footer>
 </body>

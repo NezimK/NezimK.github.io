@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="/styles/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -16,22 +16,54 @@
 </head>
 
 <body>
+    
+    <div id="loader">
+        <div class="loader-inner">
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <h1>Bienvenue chez OhmyFood</h1>
+    </div>
+
     <header>
-        <img id="LogoHeader" src="assets/icons/ohmyfood.png" alt="Logo oh my food">
+        <nav>
+            <a href="/index.html">
+            </a>
+        </nav>
+        <img id="LogoHeader" src="/assets/icons/ohmyfood.png" alt="Logo oh my food">
     </header>
+
     <div class="location">
         <i class="fa-solid fa-location-dot"></i>
         <p class="location__title">Paris, Belleville</p>
     </div>
+
     <main>
+
         <section class="reservation">
             <h1 class="reservation__title"> Réservez le menu qui vous convient</h1>
             <span class="reservation__subtitle">Découvrez des restaurants d'exception, sélectionnés par nos
                 soins.</span></p>
             <a href="#restaurants" class="cta">Explorer nos restaurants</a>
         </section>
+
         <section class="operation">
-            <div class="operation__line">
+            <div class="container">
                 <h2 class="operation__title">Fonctionnement</h2>
                 <ul>
                     <div class="operation__button"><i class="fa-solid fa-mobile-screen-button"></i>
@@ -45,56 +77,81 @@
                     <div class="operation__button"><i class="fa-solid fa-store"></i>
                         <li class="operation__text">Dégustez au restaurant</li>
                         <div class="number">3</div>
-                    
+
                     </div>
                 </ul>
+
             </div>
         </section>
+
         <section class="restaurants">
+            <h2 id="restaurants-title">Restaurants</h2>
             <div class="container">
-            <h2 id="restaurants">Restaurants</h2>
-            <div class="first_line">
-                <a href="restaurants/palette.html">
-                    <div class="card">
-                        <img src="assets/img/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
-                            alt="Photo du restaurant la palette du goût">
-                        <p class="card-txt"><strong>La palette du goût</strong><br><span class="card-txt__subtitle">Ménilmontant</span>
-                            <i class="fa-regular fa-heart"></i>
-                        </p>
-                        <div class="news">Nouveau</div>
-                    </div>
-                </a>
-                <a href="restaurants/la-note.html">
-                    <div class="card">
-                        <img src="assets/img/stil-u2Lp8tXIcjw-unsplash.jpg" alt="Photo du restaurant la note enchantée">
-                        <p class="card-txt"><strong>La note enchantée</strong>
-                            <i class="fa-regular fa-heart"></i><br>
-                            <span class="card-txt__subtitle">Charonne</span>
-                        </p>
-                        <div class="news news_second">Nouveau</div>
-                    </div>
-                </a>
-            </div>
-            <div class="second_line">
-                <a href="restaurants/francaise.html">
-                    <div class="card">
-                        <img src="assets/img/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Photo du restaurant à la francaise">
-                        <p class="card-txt"><strong>A la francaise</strong>
-                            <i class="fa-regular fa-heart"></i><br>
-                            <span class="card-txt__subtitle">Cité Rouge</span>
+                <div class="first_line">
+
+                    <article class="card">
+                        <a href="restaurants/palette.html">
+
+                            <img src="assets/img/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
+                                alt="Photo du restaurant la palette du goût">
+                            <p class="card-txt">
+                                <strong>La palette du goût</strong><br class="flop">
+                                <span class="card-txt__subtitle">Ménilmontant</span>
+                                <input type="checkbox" id="heart1" class="heart-checkbox">
+                                <label for="heart1" class="heart-label"><i class="fa-regular fa-heart"></i></label>
                             </p>
-                    </div>
-                </a>
-                <a href="restaurants/délice.html">
-                    <div class="card">
-                        <img src="assets/img/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
-                            alt="photo du restaurant le délice des sens">
-                        <p class="card-txt"><strong>Le délice des sens</strong><br><span class="card-txt__subtitle">Folie-Méricourt</p>
-                            <i class="fa-regular fa-heart"></i>
-                    </div>
-                </a>
-            </div>
-        </div>
+                            <div class="news">
+                                <p class="nouveau">Nouveau</p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <a href="restaurants/la-note.html">
+
+                            <img src="assets/img/stil-u2Lp8tXIcjw-unsplash.jpg"
+                                alt="Photo du restaurant la note enchantée">
+                            <p class="card-txt">
+                                <strong>La note enchantée</strong><br class="flop">
+                                <span class="card-txt__subtitle">Charonne</span>
+                                <input type="checkbox" id="heart2" class="heart-checkbox">
+                                <label for="heart2" class="heart-label"><i class="fa-regular fa-heart"></i></label>
+                            </p>
+                            <div class="news">
+                                <p class="nouveau">Nouveau</p>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+                    <div class="second_line">
+                    <article class="card">
+                        <a href="restaurants/francaise.html">
+                        
+                            <img src="assets/img/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
+                                alt="Photo du restaurant à la francaise">
+                            <p class="card-txt">
+                                <strong>A la francaise</strong><br class="flop">
+                                <span class="card-txt__subtitle">Cité Rouge</span>
+                                <input type="checkbox" id="heart3" class="heart-checkbox">
+                                <label for="heart3" class="heart-label"><i class="fa-regular fa-heart"></i></label>
+                            </p>
+                        </a>
+                    </article>
+                    <article class="card">
+                        <a href="restaurants/délice.html">
+
+                            <img src="assets/img/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
+                                alt="photo du restaurant le délice des sens">
+                            <p class="card-txt">
+                                <strong>Le délice des sens</strong><br class="flop">
+                                <span class="card-txt__subtitle">Folie-Méricourt</span>
+                                <input type="checkbox" id="heart4" class="heart-checkbox">
+                                <label for="heart4" class="heart-label"><i class="fa-regular fa-heart"></i></label>
+                            </p>
+                        </a>
+                    </article>          
+                    </div>       
+           </div>
         </section>
     </main>
     <footer>

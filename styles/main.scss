@@ -7,9 +7,10 @@ $white: #FFF;
 
 @mixin mobile-only {
   @media screen and (max-width: 767.98px) {
-
+    @content;
   }
 }
+
 @mixin desktop-version {
   @media screen and (min-width: 767.98px) {
     @content;
@@ -17,11 +18,15 @@ $white: #FFF;
 }
 
 /****** General *****/
+
 body {
   margin: 0;
-  font-family: 'Roboto', serif;
+  font-family: 'Roboto', sans-serif;
 }
 
+.fa-arrow-left {
+  display: none;
+}
 
 ul {
   list-style-type: none;
@@ -47,6 +52,64 @@ h1 {
   box-sizing: border-box;
   margin-bottom: 50px;
 }
+
+
+
+.flop {
+  display: none;
+}
+
+.heart-checkbox {
+  display: none;
+}
+
+/****LOADER*****/
+
+body {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  transition-delay: 1s;
+}
+
+.loader {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 50px auto;
+}
+
+.loader::before,
+.loader::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: rotate 2s linear infinite;
+}
+
+.loader::before {
+  border: 4px solid transparent;
+  border-top-color: #3498db;
+  animation-delay: -1s;
+}
+
+.loader::after {
+  border: 4px solid transparent;
+  border-bottom-color: #3498db;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /*******HEADER*******/
 
 header {
@@ -56,6 +119,9 @@ header {
   align-self: center;
   padding-top: 20px;
   padding-bottom: 15px;
+  box-shadow: 0px 2px 4px 0px #00000026;
+  position: relative;
+  z-index: 3;
 }
 
 
@@ -70,7 +136,9 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  position: relative;
+  box-shadow: 0px 4px 4px 0px #00000040;
+
 
   &__title {
     font-size: 16px;
@@ -103,8 +171,19 @@ header {
 }
 
 .operation {
+  display: flex;
+  margin-top: 80px;
+  background-color: $color_9;
+  height: 440px;
+  padding-left: 20px;
+  flex-direction: column;
   color: $black;
   padding: 18px;
+
+  &__line ul {
+    padding-left: 0;
+    text-align: center;
+  }
 
   &__title {
     font-size: 24px;
@@ -120,6 +199,7 @@ header {
     justify-content: center;
     margin-bottom: 20px;
     cursor: pointer;
+    position: relative;
   }
 
   &__text {
@@ -127,6 +207,44 @@ header {
     font-size: 16px;
     font-weight: 500;
   }
+
+  .number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    background: #9356dc;
+    color: white;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: -10px;
+    top: 18px;
+  }
+}
+
+@include desktop-version() {
+  .operation {
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    &__title {
+      display: flex;
+    }
+  }
+
+  .operation ul {
+    display: flex;
+    align-items: baseline;
+    gap: 22px;
+
+  }
+
+  .operation li {
+    padding-right: 30px;
+  }
+
   .number {
     display: flex;
     align-items: center;
@@ -140,39 +258,7 @@ header {
     left: 45px;
   }
 }
-@include desktop-version() {
-  .operation {
-    display: flex;
-    align-items: center;
-    text-align: center;
 
-    &__title {
-      display: flex;
-    }
-  }
-    .operation ul {
-      display: flex;
-      align-items: baseline;
-      gap: 22px;
-      
-    }
-    .operation li {
-    padding-right: 30px;
-    }
-    
-    .number {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50px;
-      background: #9356dc;
-      color: white;
-      width: 25px;
-      height: 25px;
-      position: absolute;
-      left: 45px;
-    }
-}
 /********RESTAURANTS********/
 .restaurants {
   background-color: $light-grey;
@@ -184,6 +270,7 @@ header {
   background-color: $white;
   margin-bottom: 15px;
   width: 100%;
+  position: relative;
 }
 
 .card img {
@@ -206,59 +293,96 @@ header {
 }
 
 .news {
-  background: #a9e0d1;
-  color: #3b8468;
-  border-radius: 2px;
-  padding: 7px 10px;
+  width: 80px;
+  height: 29px;
+  background-color: #a9e0d1;
+  display: flex;
   position: absolute;
-  top: 53rem;
-  left: 16rem;
-  font-weight: 500;
+  right: 30px;
+  z-index: 10;
+  margin-top: 10px;
+  border-radius: 3px;
+  box-shadow: 4px 2px transparent;
+  opacity: 0;
+  transition: opacity 1s linear;
+  animation: showElements 1s forwards 1s;
+}
 
-  &__second {
-  top: 40rem;
-  left: 15rem;
+.nouveau {
+  color: #3b8468;
+  margin-top: 6px;
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  opacity: 0;
+  transition: opacity 1s linear;
+  animation: showElements 1s forwards 1s;
+}
+
+@keyframes showElements {
+  to {
+    opacity: 1;
   }
 }
 
-@include desktop-version() {
-
-.restaurants {
-  max-width: 1300px;
-  margin: auto;
-  position: relative;
+.news {
+  width: 80px;
+  height: 29px;
+  background-color: $color_4;
+  display: flex;
+  position: absolute;
+  right: 30px;
+  z-index: 10;
+  margin-top: 20px;
+  border-radius: 3px;
+  box-shadow: 4px 2px transparent;
+  opacity: 0;
+  transition: opacity 1s linear;
+  animation: showElements 1s forwards 1s;
 }
 
-.container {
-
-}
-
-.first_line,
-.second_line {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 80%;
-  gap: 20px;
-}
-
-.card {
-  display: block;
-}
-
-.card img {
-  width: 100%;
-  object-fit: cover;
-  height: 100%;
-}
+.nouveau {
+  margin-top: 6px;
+  margin-left: 10px;
+  color: $color_8;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  opacity: 0;
+  transition: opacity 1s linear;
+  animation: showElements 1s forwards 1s;
 }
 
 .fa-heart {
   background-color: linear-gradient(193deg, #9356DC -11.44%, #FF79DA 140%);
-  position: relative;
-  left: 150px;
+  position: absolute;
+  right: 16px;
   cursor: pointer;
-  transition: background 0.3s ease-in-out, $main-color 0.3 ease-in-out;
 }
+
+.heart-label {
+  position: relative;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.heart-label::before {
+  content: '\f004';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  top: 2px;
+  color: transparent;
+}
+
+.heart-checkbox:checked+.heart-label::before {
+  background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(228, 112, 218, 1) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /*****FOOTER******/
 
 Footer {
@@ -279,13 +403,22 @@ Footer li {
 
 @include desktop-version() {
   Footer {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
-  align-items: baseline;
-  text-align: center;
+    background-color: #353535;
+    color: white;
+    padding: 22px 20px;
   }
-  
+
+  footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: stretch;
+    margin-bottom: 0;
+  }
+
+  footer li {
+    margin-left: 10px;
+  }
 }
 
 .footer-text {
@@ -300,14 +433,9 @@ Footer li {
   padding-top: 5px;
 }
 
-@include desktop-version() {
-  #LogoFooter {
-    display: flex;
-  }
-}
 
 .fa-utensils,
-.fa-handshake-angle{
+.fa-handshake-angle {
   color: $white;
   padding-right: 10px;
 }
