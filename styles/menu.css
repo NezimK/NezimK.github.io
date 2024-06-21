@@ -1,5 +1,7 @@
+@charset "UTF-8";
 body {
   margin: 0;
+  padding: 0;
   font-family: "Roboto", serif;
 }
 
@@ -11,7 +13,7 @@ h1 {
   font-family: "Shrikhand", serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 28px;
+  font-size: 1.75rem;
   line-height: 40px;
 }
 
@@ -38,18 +40,12 @@ a {
      object-fit: cover;
 }
 
-@media screen and (max-width: 767.98px) {
-  img {
-    width: 375px;
-    height: 275px;
-  }
-}
 .button {
   justify-content: center;
   display: flex;
   border-radius: 25px;
   padding-top: 20px;
-  color: #FFFFFF !important;
+  padding-bottom: 35px;
 }
 .button .cta {
   border: 0px solid transparent;
@@ -97,6 +93,7 @@ nav {
 
 /******BODY*******/
 .container {
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,6 +105,14 @@ nav {
   justify-content: center;
 }
 
+@media (min-width: 1024px) {
+  .container {
+    width: 50%;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin: -80px auto 0 auto;
+  }
+}
 .menu-title {
   padding-top: 20px;
 }
@@ -130,6 +135,19 @@ nav {
 .heart-label {
   position: relative;
   cursor: pointer;
+  left: 250px;
+  bottom: 45px;
+}
+
+.fa-heart:before {
+  content: "\f004";
+  z-index: 1;
+  font-size: 1.2em;
+  position: relative;
+}
+
+.fa-regular {
+  font-weight: 400;
 }
 
 .heart-label::before {
@@ -137,9 +155,11 @@ nav {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   position: absolute;
-  top: 22px;
-  left: 20px;
+  bottom: 0px;
+  left: 1px;
   color: transparent;
+  font-size: 1.7em;
+  z-index: 5;
 }
 
 .heart-checkbox:checked + .heart-label::before {
@@ -202,7 +222,6 @@ nav {
   background-color: #FFFFFF;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
   margin: 12px;
-  padding: 4px;
   width: 634px;
   height: 69px;
 }
@@ -212,12 +231,13 @@ nav {
   position: relative;
   cursor: pointer;
   overflow: hidden;
+  padding-left: 15px;
 }
 
 .price {
   display: flex;
   position: absolute;
-  right: 10px;
+  right: 0px;
   top: 50%;
   transform: translateY(-50%);
   transition: transform 0.3s ease;
@@ -232,27 +252,31 @@ nav {
   transform: translateY(30%);
 }
 
+.card:hover .price {
+  transform: translateX(-48px); /* Décale le prix vers la gauche */
+}
+
 .marque-verif {
   position: absolute;
   width: 59px;
   height: 69px;
   background-color: #6fd1b9;
   border-radius: 0px 15px 15px 0px;
-  transform: translateX(100%);
+  transform: translateX(0%);
   transition: transform 0.3s ease;
   bottom: -35px;
 }
 
-.checkbox:checked + .menu-label .marque-verif {
+.card:hover + .menu-label .marque-verif {
   transform: translateX(0%);
   visibility: visible;
 }
 
-.checkbox:checked + .menu-label .prix {
-  transform: translateX(-48px);
+.card:hover + .menu-label .price {
+  transform: translateX(-5px);
 }
 
-.checkbox:checked + .menu-label .card-txt {
+.card:hover + .menu-label .card-txt {
   width: calc(80% - 75px);
   overflow: hidden;
   white-space: nowrap;
@@ -266,19 +290,42 @@ nav {
   left: 20px;
 }
 
-@media screen and (max-width: 767.98px) {
+.fa-lg {
+  font-size: 1.25em;
+  line-height: 0.05em;
+  vertical-align: -0.075em;
+  color: white;
+}
+
+.fa-check-circle:before, .fa-circle-check:before {
+  content: "\f058";
+  top: 9px;
+  position: absolute;
+}
+
+@media (max-width: 700px) {
   .menu {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  h1 {
+    font-size: 25px;
   }
   .card {
     display: flex;
     box-sizing: border-box;
     justify-content: center;
     flex-direction: column;
-    max-width: 120px;
     align-items: center;
+    height: 69px;
+    width: 100%;
+  }
+  .card:hover .card-text {
+    width: calc(100% - 75px);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }
 /*****FOOTER******/
