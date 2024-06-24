@@ -17,24 +17,32 @@
 
 <body>
     <header>
-        <a href="/index.html">
-            <i class="fa-solid fa-arrow-left"></i>
-            <img id="LogoHeader" src="/assets/icons/ohmyfood.png" alt="Logo oh my food">
-        </a>
+        <nav>
+            <a href="/index.html">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+        </nav>
+        <img id="LogoHeader" src="/assets/icons/ohmyfood.png" alt="Logo oh my food">
     </header>
     <div class="top_image">
         <img src="/assets/img/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Photo du Restaurant À la française">
     </div>
     <main>
-        <section class="menu">
-            <div class="container">
-                <div class="menu-title">
-                    <h1 class="menu-title-text">À la française</h1>
+        <section class="container">
+            <div class="menu-title">
+                <div class="menu-title__text">
+                    <h1>À la française</h1>
                     <input type="checkbox" id="heart" class="heart-checkbox">
                     <label for="heart" class="heart-label"><i class="fa-regular fa-heart fa-xl"></i></label>
                 </div>
-                <section class="menu-card">
+            </div>
+
+            <section class="menu-card">
+                <div class="title-part E">
                     <h2 class="type-menu">Entrées</h2>
+                </div>
+
+                <section class="entries">
                     <article class="card">
                         <input type="checkbox" id="plat1" class="checkbox">
                         <label for="plat1" class="menu-label">
@@ -49,6 +57,7 @@
                             </span>
                         </label>
                     </article>
+
                     <article class="card">
                         <input type="checkbox" id="plat2" class="checkbox">
                         <label for="plat2" class="menu-label">
@@ -63,6 +72,7 @@
                             </span>
                         </label>
                     </article>
+
                     <article class="card">
                         <input type="checkbox" id="plat3" class="checkbox">
                         <label for="plat3" class="menu-label">
@@ -77,107 +87,125 @@
                             </span>
                         </label>
                     </article>
-                    <h2 class="type-menu">Plats</h2>
-                    <article class="card">
-                        <input type="checkbox" id="plat4" class="checkbox">
-                        <label for="plat4" class="menu-label">
-                            <span class="contain">
-                                <p class="card-text"><strong>Coquilles Saint-Jacques</strong><br>
-                                    Accompagnées d'une purée de panais
-                                    <span class="price">
-                                        <span class="card-price">40€</span>
-                                        <span class="marque-verif"><i class="fa-solid fa-circle-check fa-lg"></i></span>
-                                    </span>
-                                </p>
-                            </span>
-                        </label>
-                    </article>
-                    <article class="card">
-                        <input type="checkbox" id="plat5" class="checkbox">
-                        <label for="plat5" class="menu-label">
-                            <span class="contain">
-                                <p class="card-text"><strong>Magret de canard</strong><br>
-                                    Et parmentier de pommes de terre
-                                    <span class="price">
-                                        <span class="card-price">35€</span>
-                                        <span class="marque-verif"><i class="fa-solid fa-circle-check fa-lg"></i></span>
-                                    </span>
-                                </p>
-                            </span>
-                        </label>
-                    </article>
-                    <article class="card">
-                        <input type="checkbox" id="plat6" class="checkbox">
-                        <label for="plat6" class="menu-label">
-                            <span class="contain">
-                                <p class="card-text"><strong>Pigeonneau d'Ille-et-Vilaine</strong><br>
-                                    Sur son lit de gnocchis aux légumes
-                                    <span class="price">
-                                        <span class="card-price">44€</span>
-                                        <span class="marque-verif"><i class="fa-solid fa-circle-check fa-lg"></i></span>
-                                    </span>
-                                </p>
-                            </span>
-                        </label>
-                    </article>
-                    <h2 class="type-menu">Desserts</h2>
-                    <article class="card">
-                        <input type="checkbox" id="plat7" class="checkbox">
-                        <label for="plat7" class="menu-label">
-                            <span class="contain">
-                                <p class="card-text"><strong>Pétales de violettes glacés</strong><br>
-                                    Et puréee de noisettes
-                                    <span class="price">
-                                        <span class="card-price">18€</span>
-                                        <span class="marque-verif"><i class="fa-solid fa-circle-check fa-lg"></i></span>
-                                    </span>
-                                </p>
-                            </span>
-                        </label>
-                    </article>
-                    <article class="card">
-                        <input type="checkbox" id="plat8" class="checkbox">
-                        <label for="plat8" class="menu-label">
-                            <span class="contain">
-                                <p class="card-text"><strong>Fondant au chocolat</strong><br>
-                                    Revisité
-                                    <span class="price">
-                                        <span class="card-price">22€</span>
-                                        <span class="marque-verif"><i class="fa-solid fa-circle-check fa-lg"></i></span>
-                                    </span>
-                                </p>
-                            </span>
-                        </label>
-                    </article>
-                    <article class="card">
-                        <input type="checkbox" id="plat9" class="checkbox">
-                        <label for="plat9" class="menu-label">
-                            <span class="contain">
-                                <p class="card-text"><strong>Millefeuille croustillant</strong><br>
-                                    Myrtilles et pâte d'amande
-                                    <span class="price">
-                                        <span class="card-price">23€</span>
-                                        <span class="marque-verif"><i class="fa-solid fa-circle-check fa-lg"></i></span>
-                                    </span>
-                                </p>
-                            </span>
-                        </label>
-                    </article>
                 </section>
-                <div class="button">
-                    <a href="#" class="cta">Commander</a>
+
+                <div class="title-part P">
+                    <h2 class="type-menu">Plats</h2>
                 </div>
-            </div>
+
+                <article class="card">
+                    <input type="checkbox" id="plat4" class="checkbox">
+                    <label for="plat4" class="menu-label">
+                        <span class="contain">
+                            <p class="card-text"><strong>Coquilles Saint-Jacques</strong><br>
+                                Accompagnées d'une purée de panais
+                                <span class="price">
+                                    <span class="card-price">40€</span>
+                                    <span class="marque-verif"><i class="fa-solid fa-circle-check fa-lg"></i></span>
+                                </span>
+                            </p>
+                        </span>
+                    </label>
+                </article>
+
+                <article class="card">
+                    <input type="checkbox" id="plat5" class="checkbox">
+                    <label for="plat5" class="menu-label">
+                        <span class="contain">
+                            <p class="card-text"><strong>Magret de canard</strong><br>
+                                Et parmentier de pommes de terre
+                                <span class="price">
+                                    <span class="card-price">35€</span>
+                                    <span class="marque-verif"><i class="fa-solid fa-circle-check fa-lg"></i></span>
+                                </span>
+                            </p>
+                        </span>
+                    </label>
+                </article>
+
+                <article class="card">
+                    <input type="checkbox" id="plat6" class="checkbox">
+                    <label for="plat6" class="menu-label">
+                        <span class="contain">
+                            <p class="card-text"><strong>Pigeonneau d'Ille-et-Vilaine</strong><br>
+                                Sur son lit de gnocchis aux légumes
+                                <span class="price">
+                                    <span class="card-price">44€</span>
+                                    <span class="marque-verif"><i class="fa-solid fa-circle-check fa-lg"></i></span>
+                                </span>
+                            </p>
+                        </span>
+                    </label>
+                </article>
+
+                <div class="title-part D">
+                    <h2 class="type-menu">Dessert</h2>
+                </div>
+
+                <article class="card">
+                    <input type="checkbox" id="plat7" class="checkbox">
+                    <label for="plat7" class="menu-label">
+                        <span class="contain">
+                            <p class="card-text"><strong>Pétales de violettes glacés</strong><br>
+                                Et purée de noisettes
+                                <span class="price">
+                                    <span class="card-price">18€</span>
+                                    <span class="marque-verif"><i class="fa-solid fa-circle-check fa-lg"></i></span>
+                                </span>
+                            </p>
+                        </span>
+                    </label>
+                </article>
+
+                <article class="card">
+                    <input type="checkbox" id="plat8" class="checkbox">
+                    <label for="plat8" class="menu-label">
+                        <span class="contain">
+                            <p class="card-text"><strong>Fondant au chocolat</strong><br>
+                                Revisité
+                                <span class="price">
+                                    <span class="card-price">22€</span>
+                                    <span class="marque-verif"><i class="fa-solid fa-circle-check fa-lg"></i></span>
+                                </span>
+                            </p>
+                        </span>
+                    </label>
+                </article>
+
+                <article class="card">
+                    <input type="checkbox" id="plat9" class="checkbox">
+                    <label for="plat9" class="menu-label">
+                        <span class="contain">
+                            <p class="card-text"><strong>Millefeuille croustillant</strong><br>
+                                Myrtilles et pâte d'amande
+                                <span class="price">
+                                    <span class="card-price">23€</span>
+                                    <span class="marque-verif"><i class="fa-solid fa-circle-check fa-lg"></i></span>
+                                </span>
+                            </p>
+                        </span>
+                    </label>
+                </article>
+
+                <div class="button">
+                    <a href="#" class="cta">
+                        <p class="cta-text">Commander</p>
+                    </a>
+                </div>
+            </section>
         </section>
     </main>
     <footer>
-        <img id="LogoFooter" src="/assets/icons/ohmyfood.png" alt="Logo oh my food">
-        <ul>
-            <li class="footer-text"><i class="fa-solid fa-utensils"></i><a href="#">Proposer un restaurant</a></li>
-            <li class="footer-text"><i class="fa-solid fa-handshake-angle"></i><a href="#">Devenir partenaire</a></li>
-            <li class="footer-text"><a href="#">Mentions légales</a></li>
-            <li class="footer-text"><a href="#">Contacts</a></li>
-        </ul>
+        <div class="footer-container">
+            <img id="LogoFooter" src="/assets/icons/ohmyfood.png" alt="Logo oh my food">
+            <ul>
+                <li class="footer-text"><i class="fa-solid fa-utensils"></i><a href="#">Proposer un restaurant</a></li>
+                <li class="footer-text"><i class="fa-solid fa-handshake-angle"></i><a href="#">Devenir partenaire</a>
+                </li>
+                <li class="footer-text second"><a href="#">Mentions légales</a></li>
+                <li class="footer-text"><a href="#">Contacts</a></li>
+            </ul>
+        </div>
     </footer>
 </body>
 
