@@ -18,11 +18,11 @@ $white: #FFFFFF;
 }
 
 
- body {
+body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', serif;
-    
+
 }
 
 main {
@@ -31,11 +31,11 @@ main {
 
 h1 {
     font-family: "Shrikhand", serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 1.75rem;
-        line-height: 40px;
-} 
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.75rem;
+    line-height: 40px;
+}
 
 ul {
     list-style-type: none;
@@ -50,14 +50,14 @@ a {
     display: none;
 }
 
-.top_image  {
+.top_image {
     display: flex;
 
-        img {
-            width: 100vw;
-            height: 350px;
-            object-fit: cover;
-}
+    img {
+        width: 100vw;
+        height: 350px;
+        object-fit: cover;
+    }
 }
 
 .button {
@@ -67,9 +67,9 @@ a {
     padding-top: 20px;
     padding-bottom: 35px;
 
-    .cta {    
+    .cta {
         border: 0px solid transparent;
-        background: linear-gradient(360deg, rgba(151,71,255,1) -40%, rgba(228,112,218,1) 65%);
+        background: linear-gradient(360deg, rgba(151, 71, 255, 1) -40%, rgba(228, 112, 218, 1) 65%);
         width: 218px;
         height: 50px;
         border-radius: 25px;
@@ -77,21 +77,21 @@ a {
         transition: all 0.7s ease;
         text-decoration: none;
         color: white;
-        }
+    }
 
-        .cta:hover {
-            background: linear-gradient(360deg, rgba(151,71,255,1) -40%, rgba(228,112,218,1) 65%);
-            opacity: 0.8;
-            box-shadow: 0px 10px 10px lightgray;
-            }
-    
-            .cta-text{
-                display: flex;
-                font-size: 16px;
-                font-weight: 500;
-                justify-content: center;
-            }
-        
+    .cta:hover {
+        background: linear-gradient(360deg, rgba(151, 71, 255, 1) -40%, rgba(228, 112, 218, 1) 65%);
+        opacity: 0.8;
+        box-shadow: 0px 10px 10px lightgray;
+    }
+
+    .cta-text {
+        display: flex;
+        font-size: 16px;
+        font-weight: 500;
+        justify-content: center;
+    }
+
 }
 
 /*******HEADER*******/
@@ -130,19 +130,19 @@ nav {
     z-index: 1;
     position: relative;
     justify-content: center;
-    
+
 }
 
 @media (min-width: 1024px) {
-.container {
-    width: 50%;
-    padding-left: 100px;
-    padding-right: 100px;
-    margin: -80px auto 0 auto;
-}
+    .container {
+        width: 50%;
+        padding-left: 100px;
+        padding-right: 100px;
+        margin: -80px auto 0 auto;
+    }
 }
 
-.menu-title{
+.menu-title {
     padding-top: 20px;
 
     &__text {
@@ -187,15 +187,39 @@ nav {
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     position: absolute;
-    bottom: 0px;
-    left: 1px;
+    bottom: -3px;
+    left: -1px;
     color: transparent;
-    font-size: 1.7em;;
+    font-size: 1.9em;
+    ;
     z-index: 5;
 }
 
-.heart-checkbox:checked + .heart-label::before {
-    background: linear-gradient(180deg, rgba(151,71,255,1) 0%, rgba(228,112,218,1) 100%);
+@media (min-width: 767px) {
+    .fa-heart {
+        padding-top: 35px;
+        padding-left: 20px;
+        position: absolute;
+        left: 15px;
+        top: -36px;
+    }
+
+    .heart-label::before {
+        content: '\f004';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        position: absolute;
+        bottom: -15px;
+        left: 34px;
+        color: transparent;
+        font-size: 1.9em;
+        ;
+        z-index: 5;
+    }
+}
+
+.heart-checkbox:checked+.heart-label::before {
+    background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(228, 112, 218, 1) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -205,9 +229,10 @@ nav {
 
 @keyframes fadeInUp {
     from {
-        opacity: 0; 
-        transform: translateY(20px); 
+        opacity: 0;
+        transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -220,15 +245,15 @@ nav {
 }
 
 .E {
-    animation-delay: 0.3s; 
+    animation-delay: 0.3s;
 }
 
 .P {
-    animation-delay: 1s; 
+    animation-delay: 1s;
 }
 
 .D {
-    animation-delay: 1.7s; 
+    animation-delay: 1.7s;
 }
 
 .type-menu {
@@ -244,9 +269,9 @@ nav {
 .entries {
     display: flex;
     flex-direction: column;
-    padding-left: 20px;
     padding-right: 20px;
 }
+
 .card {
     display: flex;
     cursor: pointer;
@@ -273,27 +298,29 @@ nav {
     display: flex;
     position: absolute;
     right: 0px;
-    top: 50%; 
-    transform: translateY(-50%); 
-    transition: transform 0.3s ease; 
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
 }
 
 .card-price {
     font-size: 15px;
-font-weight: 700;
-line-height: 16px;
-position: absolute; 
-right: 10px;
-transform: translateY(30%); 
+    font-weight: 700;
+    line-height: 16px;
+    position: absolute;
+    right: 10px;
+    transform: translateY(30%);
 }
+
 .card:hover .price {
 
-    transform: translateX(-48px); /* Décale le prix vers la gauche */
+    transform: translateX(-48px);
+    /* Décale le prix vers la gauche */
 }
 
 .marque-verif {
     position: absolute;
-    width: 59px;
+    width: 48px;
     height: 69px;
     background-color: #6fd1b9;
     border-radius: 0px 15px 15px 0px;
@@ -304,21 +331,20 @@ transform: translateY(30%);
 }
 
 
-.card:hover + .menu-label .marque-verif {
-    transform: translateX(0%); 
+.card:hover+.menu-label .marque-verif {
+    transform: translateX(0%);
     visibility: visible;
 }
 
-.card:hover + .menu-label .price {
+.card:hover+.menu-label .price {
     transform: translateX(-5px);
 }
 
-.card:hover + .menu-label .card-txt
-{
-  width: calc(80% - 75px); 
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+.card:hover+.menu-label .card-txt {
+    width: calc(80% - 75px);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .fa-circle-check {
@@ -335,7 +361,8 @@ transform: translateY(30%);
     color: white;
 }
 
-.fa-check-circle:before, .fa-circle-check:before {
+.fa-check-circle:before,
+.fa-circle-check:before {
     content: "\f058";
     top: 9px;
     position: absolute;
@@ -352,7 +379,7 @@ transform: translateY(30%);
     h1 {
         font-size: 25px;
     }
-    
+
     .card {
         display: flex;
         box-sizing: border-box;
@@ -361,14 +388,15 @@ transform: translateY(30%);
         align-items: center;
         height: 69px;
         width: 100%;
-        
+
     }
+
     .card:hover .card-text {
         width: calc(100% - 75px);
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-      }
+    }
 }
 
 /*****FOOTER******/
@@ -378,19 +406,70 @@ Footer {
     color: white;
     flex-direction: column;
     padding: 22px 20px;
-
 }
 
 footer ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: end;
-        align-items: stretch;
-        margin-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: stretch;
+    margin-bottom: 0;
+    list-style: none;
+}
+.footer-container {
+    display: flex;
+
 }
 
-footer li {
-    margin-left: 10px;
+@media(max-width: 768px) {
+
+    footer ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        list-style: none;
+    }
+
+    footer {
+        padding-left: 0;
+    }
+    .footer-container {
+        margin: 0;
+        display: flex;
+    flex-direction: column;
+    }
+
+    #LogoFooter {
+        padding-left: 42px;
+        padding-top: 5px;
+    }
+}
+
+@media (min-width: 768px) {
+
+    #LogoFooter {
+        display: flex;
+        align-items: flex-end;
+        position: absolute;
+        right: 50px;
+    }
+
+    footer li {
+        margin-left: 10px;
+        position: relative;
+        left: 135px;
+    }
+
+    footer ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    .second {
+        margin-left: 50px;
+    }
+
 }
 
 .footer-text {
@@ -399,10 +478,10 @@ footer li {
 }
 
 #LogoFooter {
-    width: 170px;
-    height: 27px;
+    width: 100px;
+    height: 20px;
     filter: brightness(0) invert(1);
-    padding-top: 5px;
+    padding-top: 15px;
 }
 
 .fa-utensils,
