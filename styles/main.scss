@@ -362,19 +362,74 @@ header {
 }
 
 Footer {
-  background-color: $background-color_7;
-  color: $color_5;
+  background-color: #353535;
+  color: white;
   flex-direction: column;
   padding: 22px 20px;
-  align-items: center;
+}
 
-  ul {
-    padding: 0;
+footer ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: stretch;
+  margin-bottom: 0;
+  list-style: none;
+}
+.footer-container {
+  display: flex;
+justify-content: center;
+}
+
+@media(max-width: 768px) {
+
+  footer ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      list-style: none;
   }
 
-  li {
-    cursor: pointer;
+  footer {
+      padding-left: 0;
   }
+  .footer-container {
+      margin: 0;
+      display: flex;
+  flex-direction: column;
+  }
+
+  #LogoFooter {
+      padding-left: 42px;
+      padding-top: 5px;
+  }
+}
+
+@media (min-width: 768px) {
+
+  #LogoFooter {
+      display: flex;
+      align-items: flex-end;
+      position: absolute;
+      right: 50px;
+  }
+
+  footer li {
+      margin-left: 10px;
+      position: relative;
+      left: 135px;
+  }
+
+  footer ul {
+      display: flex;
+      justify-content: center;
+  }
+
+  .second {
+      margin-left: 50px;
+  }
+
 }
 
 .footer-text {
@@ -383,114 +438,14 @@ Footer {
 }
 
 #LogoFooter {
-  width: 137px;
-  height: 27px;
+  width: 100px;
+  height: 20px;
   filter: brightness(0) invert(1);
-  padding-top: 5px;
+  padding-top: 15px;
 }
 
-.fa-utensils {
-  color: $color_3;
-  padding-right: 10px;
-}
-
+.fa-utensils,
 .fa-handshake-angle {
-  color: $color_3;
+  color: $white;
   padding-right: 10px;
-}
-
-@media screen and (min-width: 767.98px) {
-  .container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 0;
-    align-items: flex-start;
-    align-self: stretch;
-  }
-
-  .flop {
-    display: none;
-  }
-
-  .operation {
-    display: flex;
-    align-items: center;
-    text-align: center;
-
-    ul {
-      display: flex;
-      align-items: baseline;
-      gap: 22px;
-    }
-
-    li {
-      padding-right: 30px;
-    }
-  }
-
-  .operation__title {
-    display: flex;
-  }
-
-  .number {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50px;
-    background: #9356dc;
-    color: $color_5;
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    left: 45px;
-  }
-
-  .restaurants {
-    position: relative;
-  }
-
-
-  .card {
-    display: flex;
-    width: 498px;
-    height: 315px;
-    position: relative;
-    flex-direction: column;
-    margin: 25px;
-
-    img {
-      width: 498px;
-      -o-object-fit: cover;
-      object-fit: cover;
-      height: 231px;
-    }
-  }
-
-  .card-txt {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-  }
-
-  Footer {
-    background-color: $background-color_7;
-    color: $color_5;
-    padding: 22px 20px;
-  }
-
-  footer {
-    ul {
-      display: flex;
-      flex-direction: row;
-      justify-content: end;
-      align-items: stretch;
-      margin-bottom: 0;
-    }
-
-    li {
-      margin-left: 10px;
-    }
-  }
 }

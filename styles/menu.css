@@ -203,6 +203,7 @@ nav {
 .title-part {
   opacity: 0;
   animation: fadeInUp 0.7s ease forwards;
+  padding-left: 12px;
 }
 
 .E {
@@ -272,12 +273,13 @@ nav {
 }
 
 .card:hover .price {
-  transform: translateX(-48px); /* Décale le prix vers la gauche */
+  transform: translateX(-48px);
+  /* Décale le prix vers la gauche */
 }
 
 .marque-verif {
   position: absolute;
-  width: 59px;
+  width: 48px;
   height: 69px;
   background-color: #6fd1b9;
   border-radius: 0px 15px 15px 0px;
@@ -316,7 +318,8 @@ nav {
   color: white;
 }
 
-.fa-check-circle:before, .fa-circle-check:before {
+.fa-check-circle:before,
+.fa-circle-check:before {
   content: "\f058";
   top: 9px;
   position: absolute;
@@ -338,7 +341,7 @@ nav {
     flex-direction: column;
     align-items: center;
     height: 69px;
-    width: 100%;
+    width: 350px;
   }
   .card:hover .card-text {
     width: calc(100% - 75px);
@@ -364,6 +367,11 @@ footer ul {
   list-style: none;
 }
 
+.footer-container {
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 768px) {
   footer ul {
     display: flex;
@@ -375,8 +383,14 @@ footer ul {
   footer {
     padding-left: 0;
   }
+  .footer-container {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
   #LogoFooter {
     padding-left: 42px;
+    padding-top: 5px;
   }
 }
 @media (min-width: 768px) {
@@ -408,7 +422,7 @@ footer ul {
   width: 100px;
   height: 20px;
   filter: brightness(0) invert(1);
-  padding-top: 5px;
+  padding-top: 15px;
 }
 
 .fa-utensils,
