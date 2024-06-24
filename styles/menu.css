@@ -325,7 +325,7 @@ nav {
   position: absolute;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .menu {
     display: flex;
     align-items: center;
@@ -333,6 +333,7 @@ nav {
   }
   h1 {
     font-size: 25px;
+    padding-right: 130px;
   }
   .card {
     display: flex;
@@ -402,8 +403,6 @@ footer ul {
   }
   footer li {
     margin-left: 10px;
-    position: relative;
-    left: 135px;
   }
   footer ul {
     display: flex;
@@ -411,6 +410,17 @@ footer ul {
   }
   .second {
     margin-left: 50px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1300px) {
+  #LogoFooter {
+    position: relative;
+    right: 0;
+    margin-right: 20px;
+  }
+  .footer-container {
+    display: flex;
+    justify-content: start;
   }
 }
 .footer-text {
