@@ -235,7 +235,6 @@ header {
   border-radius: 20px 20px 0px 0px;
   width: 100%;
   height: 230px;
-  -o-object-fit: cover;
   object-fit: cover;
   box-sizing: border-box;
 }
@@ -263,7 +262,7 @@ header {
 }
 
 .fa-heart {
-  background-color: linear-gradient(193deg, #9356DC -11.44%, #FF79DA 140%);
+  background-image: url("https://cssgradient.io/gradient-backgrounds/?gradient=9356dc&gradient=ff79da&angle=193&type=linear&percentage=11.44,140");
   cursor: pointer;
   position: absolute;
   bottom: 39px;
@@ -279,9 +278,8 @@ header {
 }
 .heart-checkbox:checked + .heart-label::before {
   background: linear-gradient(180deg, rgb(151, 71, 255) 0%, rgb(228, 112, 218) 100%);
-  -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .fa-heart:before {
@@ -411,7 +409,6 @@ Footer li {
   }
   .card img {
     width: 498px;
-    -o-object-fit: cover;
     object-fit: cover;
     height: 231px;
   }

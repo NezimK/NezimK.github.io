@@ -285,14 +285,26 @@ nav {
 
 }
 
-.menu-label {
+.card-txt {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .card-txt__subtitle {
+    font-size: 17px;
+    font-weight: 300;
+  }
+  
+
+
+
+.contain {
     width: 100%;
     position: relative;
     cursor: pointer;
     overflow: hidden;
     padding-left: 15px;
 }
-
 
 .price {
     display: flex;
@@ -392,7 +404,7 @@ nav {
 
     }
 
-    .card:hover .card-text {
+    .card:hover .card-txt {
         width: calc(100% - 75px);
         overflow: hidden;
         white-space: nowrap;

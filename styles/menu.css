@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 body {
   margin: 0;
   padding: 0;
@@ -33,11 +34,11 @@ a {
 .top_image {
   display: flex;
 }
+
 .top_image img {
   width: 100vw;
   height: 350px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .button {
@@ -47,6 +48,7 @@ a {
   padding-top: 20px;
   padding-bottom: 35px;
 }
+
 .button .cta {
   border: 0px solid transparent;
   background: linear-gradient(360deg, rgb(151, 71, 255) -40%, rgb(228, 112, 218) 65%);
@@ -58,11 +60,13 @@ a {
   text-decoration: none;
   color: white;
 }
+
 .button .cta:hover {
   background: linear-gradient(360deg, rgb(151, 71, 255) -40%, rgb(228, 112, 218) 65%);
   opacity: 0.8;
   box-shadow: 0px 10px 10px lightgray;
 }
+
 .button .cta-text {
   display: flex;
   font-size: 16px;
@@ -113,13 +117,16 @@ nav {
     margin: -80px auto 0 auto;
   }
 }
+
 .menu-title {
   padding-top: 20px;
 }
+
 .menu-title__text {
   display: flex;
   padding-left: 22px;
 }
+
 .menu-title__text .fa-heart {
   padding-top: 35px;
   padding-left: 20px;
@@ -170,6 +177,7 @@ nav {
     left: 15px;
     top: -36px;
   }
+
   .heart-label::before {
     content: "\f004";
     font-family: "Font Awesome 5 Free";
@@ -182,11 +190,11 @@ nav {
     z-index: 5;
   }
 }
-.heart-checkbox:checked + .heart-label::before {
+
+.heart-checkbox:checked+.heart-label::before {
   background: linear-gradient(180deg, rgb(151, 71, 255) 0%, rgb(228, 112, 218) 100%);
-  -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 /****MENU***/
@@ -195,11 +203,13 @@ nav {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 .title-part {
   opacity: 0;
   animation: fadeInUp 0.7s ease forwards;
@@ -246,6 +256,16 @@ nav {
   height: 69px;
 }
 
+.card-txt {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.card-txt__subtitle {
+  font-size: 17px;
+  font-weight: 300;
+}
+
 .menu-label {
   width: 100%;
   position: relative;
@@ -288,16 +308,16 @@ nav {
   bottom: -35px;
 }
 
-.card:hover + .menu-label .marque-verif {
+.card:hover+.menu-label .marque-verif {
   transform: translateX(0%);
   visibility: visible;
 }
 
-.card:hover + .menu-label .price {
+.card:hover+.menu-label .price {
   transform: translateX(-5px);
 }
 
-.card:hover + .menu-label .card-txt {
+.card:hover+.menu-label .card-txt {
   width: calc(80% - 75px);
   overflow: hidden;
   white-space: nowrap;
@@ -331,10 +351,12 @@ nav {
     align-items: center;
     justify-content: center;
   }
+
   h1 {
     font-size: 25px;
     padding-right: 130px;
   }
+
   .card {
     display: flex;
     box-sizing: border-box;
@@ -344,13 +366,15 @@ nav {
     height: 69px;
     width: 350px;
   }
-  .card:hover .card-text {
+
+  .card:hover .card-txt {
     width: calc(100% - 75px);
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
   }
 }
+
 /*****FOOTER******/
 Footer {
   background-color: #353535;
@@ -381,19 +405,23 @@ footer ul {
     gap: 8px;
     list-style: none;
   }
+
   footer {
     padding-left: 0;
   }
+
   .footer-container {
     margin: 0;
     display: flex;
     flex-direction: column;
   }
+
   #LogoFooter {
     padding-left: 42px;
     padding-top: 5px;
   }
 }
+
 @media (min-width: 768px) {
   #LogoFooter {
     display: flex;
@@ -401,28 +429,34 @@ footer ul {
     position: absolute;
     right: 50px;
   }
+
   footer li {
     margin-left: 10px;
   }
+
   footer ul {
     display: flex;
     justify-content: center;
   }
+
   .second {
     margin-left: 50px;
   }
 }
+
 @media (min-width: 769px) and (max-width: 1300px) {
   #LogoFooter {
     position: relative;
     right: 0;
     margin-right: 20px;
   }
+
   .footer-container {
     display: flex;
     justify-content: start;
   }
 }
+
 .footer-text {
   display: flex;
   align-items: center;
@@ -439,4 +473,6 @@ footer ul {
 .fa-handshake-angle {
   color: #FFFFFF;
   padding-right: 10px;
-}/*# sourceMappingURL=menu.css.map */
+}
+
+/*# sourceMappingURL=menu.css.map */
