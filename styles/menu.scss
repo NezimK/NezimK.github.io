@@ -129,7 +129,7 @@ nav {
     z-index: 1;
     position: relative;
     justify-content: center;
-
+    max-width: 1440px;
 }
 
 @media (min-width: 1024px) {
@@ -143,18 +143,23 @@ nav {
 
 .menu-title {
     padding-top: 20px;
+    display: flex;
 
     &__text {
         display: flex;
         padding-left: 22px;
 
-        .fa-heart {
-            padding-top: 35px;
-            padding-left: 20px;
-            position: absolute;
-            right: 38rem;
-            top: 6rem;
-        }
+    }
+}
+
+@media screen and (max-width: 769px)
+{
+    .fa-heart {
+        padding-top: 35px;
+        padding-left: 20px;
+        position: relative;
+        right: 6rem;
+        top: 0.5rem;
     }
 }
 
@@ -162,18 +167,12 @@ nav {
     display: none;
 }
 
-.heart-label {
-    position: relative;
-    cursor: pointer;
-    left: 250px;
-    bottom: 45px;
-}
-
 .fa-heart:before {
     content: "\f004";
     z-index: 1;
     font-size: 1.2em;
     position: relative;
+    transition: background-color 0.8s ease;
 }
 
 
@@ -185,35 +184,35 @@ nav {
     content: '\f004';
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
-    position: absolute;
-    bottom: -3px;
-    left: -1px;
+    position: relative;
+    top: 11px;
+    right: 46px;
     color: transparent;
     font-size: 1.9em;
     ;
     z-index: 5;
 }
 
-@media (min-width: 767px) {
-    .fa-heart {
-        padding-top: 35px;
-        padding-left: 20px;
-        position: absolute;
-        left: 15px;
-        top: -36px;
-    }
+
+@media screen and (min-width: 769px) {
 
     .heart-label::before {
         content: '\f004';
         font-family: 'Font Awesome 5 Free';
         font-weight: 900;
-        position: absolute;
-        bottom: -15px;
-        left: 34px;
+        position: relative;
+        bottom: -10px;
+        left: 49px;
         color: transparent;
         font-size: 1.9em;
         ;
         z-index: 5;
+    }
+    .fa-heart {
+        padding-top: 35px;
+        padding-left: 20px;
+        position: relative;
+        top: 0.5rem;
     }
 }
 
@@ -272,6 +271,13 @@ nav {
     padding-right: 20px;
 }
 
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
 .card {
     display: flex;
     cursor: pointer;
@@ -282,7 +288,8 @@ nav {
     margin: 12px;
     width: 634px;
     height: 69px;
-
+    animation: fadeInLeft 0.7s ease forwards;
+    animation-delay: 0.10s;
 }
 
 .card-txt {
@@ -298,7 +305,7 @@ nav {
 
 
 
-.contain {
+.menu-label {
     width: 100%;
     position: relative;
     cursor: pointer;
@@ -362,8 +369,8 @@ nav {
 .fa-circle-check {
     color: $white;
     position: relative;
-    top: 25px;
-    left: 20px;
+    top: 10px;
+    left: 15px;
 }
 
 .fa-lg {
@@ -508,6 +515,6 @@ footer ul {
 
 .fa-utensils,
 .fa-handshake-angle {
-    color: $white;
+    color: white;
     padding-right: 10px;
 }
