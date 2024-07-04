@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 body {
   margin: 0;
   padding: 0;
@@ -34,11 +33,11 @@ a {
 .top_image {
   display: flex;
 }
-
 .top_image img {
   width: 100vw;
   height: 350px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .button {
@@ -48,7 +47,6 @@ a {
   padding-top: 20px;
   padding-bottom: 35px;
 }
-
 .button .cta {
   border: 0px solid transparent;
   background: linear-gradient(360deg, rgb(151, 71, 255) -40%, rgb(228, 112, 218) 65%);
@@ -60,13 +58,11 @@ a {
   text-decoration: none;
   color: white;
 }
-
 .button .cta:hover {
   background: linear-gradient(360deg, rgb(151, 71, 255) -40%, rgb(228, 112, 218) 65%);
   opacity: 0.8;
   box-shadow: 0px 10px 10px lightgray;
 }
-
 .button .cta-text {
   display: flex;
   font-size: 16px;
@@ -107,6 +103,7 @@ nav {
   z-index: 1;
   position: relative;
   justify-content: center;
+  max-width: 1440px;
 }
 
 @media (min-width: 1024px) {
@@ -117,33 +114,26 @@ nav {
     margin: -80px auto 0 auto;
   }
 }
-
 .menu-title {
   padding-top: 20px;
+  display: flex;
 }
-
 .menu-title__text {
   display: flex;
   padding-left: 22px;
 }
 
-.menu-title__text .fa-heart {
-  padding-top: 35px;
-  padding-left: 20px;
-  position: absolute;
-  right: 38rem;
-  top: 6rem;
+@media screen and (max-width: 769px) {
+  .fa-heart {
+    padding-top: 35px;
+    padding-left: 20px;
+    position: relative;
+    right: 6rem;
+    top: 0.5rem;
+  }
 }
-
 .heart-checkbox {
   display: none;
-}
-
-.heart-label {
-  position: relative;
-  cursor: pointer;
-  left: 250px;
-  bottom: 45px;
 }
 
 .fa-heart:before {
@@ -151,6 +141,7 @@ nav {
   z-index: 1;
   font-size: 1.2em;
   position: relative;
+  transition: background-color 0.8s ease;
 }
 
 .fa-regular {
@@ -161,40 +152,38 @@ nav {
   content: "\f004";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  position: absolute;
-  bottom: -3px;
-  left: -1px;
+  position: relative;
+  top: 11px;
+  right: 46px;
   color: transparent;
   font-size: 1.9em;
   z-index: 5;
 }
 
-@media (min-width: 767px) {
-  .fa-heart {
-    padding-top: 35px;
-    padding-left: 20px;
-    position: absolute;
-    left: 15px;
-    top: -36px;
-  }
-
+@media screen and (min-width: 769px) {
   .heart-label::before {
     content: "\f004";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    position: absolute;
-    bottom: -15px;
-    left: 34px;
+    position: relative;
+    bottom: -10px;
+    left: 49px;
     color: transparent;
     font-size: 1.9em;
     z-index: 5;
   }
+  .fa-heart {
+    padding-top: 35px;
+    padding-left: 20px;
+    position: relative;
+    top: 0.5rem;
+  }
 }
-
-.heart-checkbox:checked+.heart-label::before {
+.heart-checkbox:checked + .heart-label::before {
   background: linear-gradient(180deg, rgb(151, 71, 255) 0%, rgb(228, 112, 218) 100%);
+  -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 /****MENU***/
@@ -203,13 +192,11 @@ nav {
     opacity: 0;
     transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
 .title-part {
   opacity: 0;
   animation: fadeInUp 0.7s ease forwards;
@@ -244,6 +231,12 @@ nav {
   padding-right: 20px;
 }
 
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
 .card {
   display: flex;
   cursor: pointer;
@@ -254,6 +247,8 @@ nav {
   margin: 12px;
   width: 634px;
   height: 69px;
+  animation: fadeInLeft 0.7s ease forwards;
+  animation-delay: 0.1s;
 }
 
 .card-txt {
@@ -308,16 +303,16 @@ nav {
   bottom: -35px;
 }
 
-.card:hover+.menu-label .marque-verif {
+.card:hover + .menu-label .marque-verif {
   transform: translateX(0%);
   visibility: visible;
 }
 
-.card:hover+.menu-label .price {
+.card:hover + .menu-label .price {
   transform: translateX(-5px);
 }
 
-.card:hover+.menu-label .card-txt {
+.card:hover + .menu-label .card-txt {
   width: calc(80% - 75px);
   overflow: hidden;
   white-space: nowrap;
@@ -327,8 +322,8 @@ nav {
 .fa-circle-check {
   color: #FFFFFF;
   position: relative;
-  top: 25px;
-  left: 20px;
+  top: 10px;
+  left: 15px;
 }
 
 .fa-lg {
@@ -351,12 +346,10 @@ nav {
     align-items: center;
     justify-content: center;
   }
-
   h1 {
     font-size: 25px;
     padding-right: 130px;
   }
-
   .card {
     display: flex;
     box-sizing: border-box;
@@ -366,7 +359,6 @@ nav {
     height: 69px;
     width: 350px;
   }
-
   .card:hover .card-txt {
     width: calc(100% - 75px);
     overflow: hidden;
@@ -374,7 +366,6 @@ nav {
     text-overflow: ellipsis;
   }
 }
-
 /*****FOOTER******/
 Footer {
   background-color: #353535;
@@ -405,23 +396,19 @@ footer ul {
     gap: 8px;
     list-style: none;
   }
-
   footer {
     padding-left: 0;
   }
-
   .footer-container {
     margin: 0;
     display: flex;
     flex-direction: column;
   }
-
   #LogoFooter {
     padding-left: 42px;
     padding-top: 5px;
   }
 }
-
 @media (min-width: 768px) {
   #LogoFooter {
     display: flex;
@@ -429,34 +416,28 @@ footer ul {
     position: absolute;
     right: 50px;
   }
-
   footer li {
     margin-left: 10px;
   }
-
   footer ul {
     display: flex;
     justify-content: center;
   }
-
   .second {
     margin-left: 50px;
   }
 }
-
 @media (min-width: 769px) and (max-width: 1300px) {
   #LogoFooter {
     position: relative;
     right: 0;
     margin-right: 20px;
   }
-
   .footer-container {
     display: flex;
     justify-content: start;
   }
 }
-
 .footer-text {
   display: flex;
   align-items: center;
@@ -471,8 +452,6 @@ footer ul {
 
 .fa-utensils,
 .fa-handshake-angle {
-  color: #FFFFFF;
+  color: white;
   padding-right: 10px;
-}
-
-/*# sourceMappingURL=menu.css.map */
+}/*# sourceMappingURL=menu.css.map */

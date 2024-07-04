@@ -84,12 +84,6 @@ body {
   animation-delay: 0.6s;
 }
 
-#content {
-  text-align: center;
-  display: none;
-  animation: showContent 3s forwards;
-}
-
 .heart-checkbox {
   display: none;
 }
@@ -114,11 +108,13 @@ h1 {
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
   padding: 13px 18px;
   margin: auto;
+  margin-top: 36px;
   color: #FFF;
   box-sizing: border-box;
   margin-bottom: 50px;
 }
 
+/******HEADER******/
 header {
   display: flex;
   justify-content: center;
@@ -136,6 +132,7 @@ header {
   height: 34px;
 }
 
+/******LOCATION*****/
 .location {
   background-color: #EAEAEA;
   display: flex;
@@ -155,11 +152,13 @@ header {
   padding-right: 17px;
 }
 
+/******RESERVATION******/
 .reservation {
   display: flex;
   flex-direction: column;
   text-align: center;
   background-color: #F6F6F6;
+  max-width: 1440px;
 }
 
 .reservation__title {
@@ -173,9 +172,11 @@ header {
   font-weight: 300;
 }
 
+/******OPERATION******/
 .operation {
   color: #000;
   padding: 18px;
+  max-width: 1440px;
 }
 .operation .number {
   display: flex;
@@ -211,6 +212,7 @@ header {
   margin-bottom: 20px;
   cursor: pointer;
   position: relative;
+  box-sizing: border-box;
 }
 
 .operation__text {
@@ -219,23 +221,32 @@ header {
   font-weight: 500;
 }
 
+/*******RESTAURANTS*******/
 .restaurants {
   background-color: #F6F6F6;
   padding: 18px;
+  max-width: 1440px;
 }
 
+@media (min-width: 1025px) {
+  .restaurants {
+    padding: 10%;
+  }
+}
 .card {
   border-radius: 15px;
   background-color: #FFF;
   margin-bottom: 15px;
   width: 100%;
   position: relative;
+  overflow: hidden;
 }
 .card img {
   border-radius: 20px 20px 0px 0px;
   width: 100%;
   height: 230px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   box-sizing: border-box;
 }
 
@@ -244,7 +255,6 @@ header {
   font-size: 18px;
   font-weight: 700;
 }
-
 .card-txt__subtitle {
   font-size: 17px;
   font-weight: 300;
@@ -262,10 +272,10 @@ header {
 }
 
 .fa-heart {
-  background-image: url("https://cssgradient.io/gradient-backgrounds/?gradient=9356dc&gradient=ff79da&angle=193&type=linear&percentage=11.44,140");
+  background-color: url("https://cssgradient.io/gradient-backgrounds/?gradient=9356dc&gradient=ff79da&angle=193&type=linear&percentage=11.44,140");
   cursor: pointer;
   position: absolute;
-  bottom: 39px;
+  bottom: 36px;
   right: 28px;
 }
 
@@ -278,7 +288,8 @@ header {
 }
 .heart-checkbox:checked + .heart-label::before {
   background: linear-gradient(180deg, rgb(151, 71, 255) 0%, rgb(228, 112, 218) 100%);
-  background-clip: text;
+  -webkit-background-clip: text;
+          background-clip: text;
   color: transparent;
 }
 
@@ -298,12 +309,13 @@ header {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   position: absolute;
-  bottom: 25px;
+  bottom: 28px;
   right: 27px;
   color: transparent;
   font-size: 1.9em;
   z-index: 5;
   cursor: pointer;
+  transition: background-color 0.5s ease;
 }
 
 @media (max-width: 768px) {
@@ -319,117 +331,92 @@ header {
     z-index: 5;
   }
 }
+/*******FOOTER******/
 Footer {
   background-color: #353535;
   color: white;
   flex-direction: column;
   padding: 22px 20px;
-  align-items: center;
-}
-Footer ul {
-  padding: 0;
-}
-Footer li {
-  cursor: pointer;
 }
 
+footer ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: stretch;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  footer ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    list-style: none;
+  }
+  footer {
+    padding-left: 0;
+  }
+  .footer-container {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  #LogoFooter {
+    padding-left: 42px;
+    padding-top: 5px;
+  }
+}
+@media (min-width: 768px) {
+  #LogoFooter {
+    display: flex;
+    align-items: flex-end;
+    position: absolute;
+    right: 50px;
+  }
+  footer li {
+    margin-left: 10px;
+  }
+  footer ul {
+    display: flex;
+    justify-content: center;
+  }
+  .second {
+    margin-left: 50px;
+  }
+}
+@media (min-width: 769px) {
+  #LogoFooter {
+    position: relative;
+    right: 0;
+    margin-right: 20px;
+  }
+  .footer-container {
+    display: flex;
+    justify-content: start;
+  }
+}
 .footer-text {
   display: flex;
   align-items: center;
 }
 
 #LogoFooter {
-  width: 137px;
-  height: 27px;
+  width: 100px;
+  height: 20px;
   filter: brightness(0) invert(1);
-  padding-top: 5px;
+  padding-top: 15px;
 }
 
-.fa-utensils {
-  color: #FFF;
-  padding-right: 10px;
-}
-
+.fa-utensils,
 .fa-handshake-angle {
-  color: #FFF;
+  color: white;
   padding-right: 10px;
-}
-
-@media screen and (min-width: 767.98px) {
-  .container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 0;
-    align-items: flex-start;
-    align-self: stretch;
-  }
-  .flop {
-    display: none;
-  }
-  .operation {
-    display: flex;
-    align-items: center;
-    text-align: center;
-  }
-  .operation ul {
-    display: flex;
-    align-items: baseline;
-    gap: 22px;
-  }
-  .operation li {
-    padding-right: 30px;
-  }
-  .operation__title {
-    display: flex;
-  }
-  .number {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50px;
-    background: #9356dc;
-    color: white;
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    left: 45px;
-  }
-  .restaurants {
-    position: relative;
-  }
-  .card {
-    display: flex;
-    width: 498px;
-    height: 315px;
-    position: relative;
-    flex-direction: column;
-    margin: 25px;
-  }
-  .card img {
-    width: 498px;
-    object-fit: cover;
-    height: 231px;
-  }
-  .card-txt {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-  }
-  Footer {
-    background-color: #353535;
-    color: white;
-    padding: 22px 20px;
-  }
-  footer ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    align-items: stretch;
-    margin-bottom: 0;
-  }
-  footer li {
-    margin-left: 10px;
-  }
 }/*# sourceMappingURL=main.css.map */
