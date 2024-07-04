@@ -228,9 +228,22 @@ header {
   max-width: 1440px;
 }
 
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.card {
+  flex-basis: calc(50% - 10px);
+  margin-bottom: 20px;
+}
+
 @media (min-width: 1025px) {
   .restaurants {
-    padding: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 }
 .card {
