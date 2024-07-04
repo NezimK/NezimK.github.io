@@ -51,7 +51,8 @@ $background-color_7: #353535;
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 1440px;
   font-family: $font-family_1;
 }
 
@@ -143,8 +144,14 @@ h1 {
   color: $color_3;
   box-sizing: border-box;
   margin-bottom: 50px;
+  transition: all 0.7s ease;
 }
 
+.cta:hover {
+  background: linear-gradient(360deg, rgba(151, 71, 255, 1) -40%, rgba(228, 112, 218, 1) 65%);
+  opacity: 0.8;
+  box-shadow: 0px 10px 10px lightgray;
+}
 
 /******HEADER******/
 
@@ -230,10 +237,12 @@ header {
 }
 
 .operation__line {
-  ul {
+
     padding-left: 0;
     text-align: center;
-  }
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .operation__title {
@@ -241,24 +250,35 @@ header {
   font-weight: 700;
 }
 
+@media screen and (min-width: 1025px) {
+  .operation__title {
+    padding-left: 9%;
+  }
+}
+
 .operation__button {
+  width: 23%;
   border-radius: 20px;
   background-color: $background-color_4;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
   display: flex;
   padding: 20px;
   justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
+  margin-right: 48px;
   cursor: pointer;
   position: relative;
   box-sizing: border-box;
-
+  
 }
 
 .operation__text {
   margin-left: 25px;
   font-size: 16px;
   font-weight: 500;
+  display: flex;
+  justify-content: center;
 }
 
 /*******RESTAURANTS*******/
@@ -269,15 +289,18 @@ header {
   max-width: 1440px;
 
 }
+
+@media screen and (min-width: 768px) {
+  
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
+  gap: 25px;
 }
-
+}
 .card {
-  flex-basis: calc(50% - 10px);
+  flex-basis: calc(47% - 10px);
   margin-bottom: 20px;
 }
 
@@ -330,7 +353,6 @@ header {
 }
 
 .fa-heart {
-  background-color: url("https://cssgradient.io/gradient-backgrounds/?gradient=9356dc&gradient=ff79da&angle=193&type=linear&percentage=11.44,140");
   cursor: pointer;
   position: absolute;
   bottom: 36px;
@@ -338,7 +360,7 @@ header {
 }
 
 
-@media (min-width: 767px) {
+@media (min-width: 768px) {
 
   .fa-heart {
     position: absolute;
@@ -350,7 +372,7 @@ header {
 .heart-checkbox:checked+.heart-label::before {
   background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(228, 112, 218, 1) 100%);
   background-clip: text;
-color: transparent;
+  transition: $background-color_6 10s ease-in-out;
 }
 
 .fa-heart:before {
@@ -376,7 +398,6 @@ color: transparent;
   font-size: 1.9em;
   z-index: 5;
   cursor: pointer;
-  transition: background-color 0.5s ease;
 }
 
 @media (max-width: 768px) {
@@ -390,6 +411,7 @@ color: transparent;
     color: transparent;
     font-size: 1.9em;
     z-index: 5;
+    transition: $background-color_6 5s ease-in-out;
   }
 }
 
@@ -413,6 +435,7 @@ footer ul {
 .footer-container {
   display: flex;
   justify-content: center;
+  flex-direction: row-reverse;
 }
 
 @media(max-width: 768px) {
@@ -442,12 +465,6 @@ footer ul {
 
 @media (min-width: 768px) {
 
-  #LogoFooter {
-      display: flex;
-      align-items: flex-end;
-      position: absolute;
-      right: 50px;
-  }
 
   footer li {
       margin-left: 10px;
@@ -463,12 +480,8 @@ footer ul {
   }
 
 }
-@media (min-width: 769px)  {
-  #LogoFooter {
-      position: relative;
-      right: 0;
-      margin-right: 20px;
-  }
+@media (min-width: 769px) and (max-width: 10px){
+
   .footer-container {
     display: flex;
   justify-content: start;
@@ -485,6 +498,7 @@ footer ul {
   height: 20px;
   filter: brightness(0) invert(1);
   padding-top: 15px;
+  padding-left: 45px;
 }
 
 .fa-utensils,

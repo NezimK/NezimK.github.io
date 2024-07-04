@@ -26,7 +26,8 @@
   }
 }
 body {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 1440px;
   font-family: "Roboto", sans-serif;
 }
 
@@ -112,6 +113,13 @@ h1 {
   color: #FFF;
   box-sizing: border-box;
   margin-bottom: 50px;
+  transition: all 0.7s ease;
+}
+
+.cta:hover {
+  background: linear-gradient(360deg, rgb(151, 71, 255) -40%, rgb(228, 112, 218) 65%);
+  opacity: 0.8;
+  box-shadow: 0px 10px 10px lightgray;
 }
 
 /******HEADER******/
@@ -192,9 +200,12 @@ header {
   top: 18px;
 }
 
-.operation__line ul {
+.operation__line {
   padding-left: 0;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .operation__title {
@@ -202,14 +213,22 @@ header {
   font-weight: 700;
 }
 
+@media screen and (min-width: 1025px) {
+  .operation__title {
+    padding-left: 9%;
+  }
+}
 .operation__button {
+  width: 23%;
   border-radius: 20px;
   background-color: #F6F6F6;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
   display: flex;
   padding: 20px;
   justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
+  margin-right: 48px;
   cursor: pointer;
   position: relative;
   box-sizing: border-box;
@@ -219,6 +238,8 @@ header {
   margin-left: 25px;
   font-size: 16px;
   font-weight: 500;
+  display: flex;
+  justify-content: center;
 }
 
 /*******RESTAURANTS*******/
@@ -228,15 +249,16 @@ header {
   max-width: 1440px;
 }
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
+@media screen and (min-width: 768px) {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 25px;
+  }
 }
-
 .card {
-  flex-basis: calc(50% - 10px);
+  flex-basis: calc(47% - 10px);
   margin-bottom: 20px;
 }
 
@@ -285,14 +307,13 @@ header {
 }
 
 .fa-heart {
-  background-color: url("https://cssgradient.io/gradient-backgrounds/?gradient=9356dc&gradient=ff79da&angle=193&type=linear&percentage=11.44,140");
   cursor: pointer;
   position: absolute;
   bottom: 36px;
   right: 28px;
 }
 
-@media (min-width: 767px) {
+@media (min-width: 768px) {
   .fa-heart {
     position: absolute;
     bottom: 40px;
@@ -303,7 +324,7 @@ header {
   background: linear-gradient(180deg, rgb(151, 71, 255) 0%, rgb(228, 112, 218) 100%);
   -webkit-background-clip: text;
           background-clip: text;
-  color: transparent;
+  transition: linear-gradient(193deg, #9356DC -11.44%, #FF79DA 140%) 10s ease-in-out;
 }
 
 .fa-heart:before {
@@ -328,7 +349,6 @@ header {
   font-size: 1.9em;
   z-index: 5;
   cursor: pointer;
-  transition: background-color 0.5s ease;
 }
 
 @media (max-width: 768px) {
@@ -342,6 +362,7 @@ header {
     color: transparent;
     font-size: 1.9em;
     z-index: 5;
+    transition: linear-gradient(193deg, #9356DC -11.44%, #FF79DA 140%) 5s ease-in-out;
   }
 }
 /*******FOOTER******/
@@ -364,6 +385,7 @@ footer ul {
 .footer-container {
   display: flex;
   justify-content: center;
+  flex-direction: row-reverse;
 }
 
 @media (max-width: 768px) {
@@ -388,12 +410,6 @@ footer ul {
   }
 }
 @media (min-width: 768px) {
-  #LogoFooter {
-    display: flex;
-    align-items: flex-end;
-    position: absolute;
-    right: 50px;
-  }
   footer li {
     margin-left: 10px;
   }
@@ -405,12 +421,7 @@ footer ul {
     margin-left: 50px;
   }
 }
-@media (min-width: 769px) {
-  #LogoFooter {
-    position: relative;
-    right: 0;
-    margin-right: 20px;
-  }
+@media (min-width: 769px) and (max-width: 10px) {
   .footer-container {
     display: flex;
     justify-content: start;
@@ -426,6 +437,7 @@ footer ul {
   height: 20px;
   filter: brightness(0) invert(1);
   padding-top: 15px;
+  padding-left: 45px;
 }
 
 .fa-utensils,
