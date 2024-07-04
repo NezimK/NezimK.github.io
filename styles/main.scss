@@ -132,16 +132,20 @@ h1 {
   font-family: $font-family_2;
 }
 
+
 .cta {
   border-radius: 25px;
   background: linear-gradient(193deg, #9356DC -11.44%, #FF79DA 140%);
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
   padding: 13px 18px;
   margin: auto;
+  margin-top: 36px;
   color: $color_3;
   box-sizing: border-box;
   margin-bottom: 50px;
 }
+
+
 /******HEADER******/
 
 header {
@@ -189,6 +193,7 @@ header {
   flex-direction: column;
   text-align: center;
   background-color: $background-color_4;
+  max-width: 1440px;
 }
 
 .reservation__title {
@@ -207,6 +212,7 @@ header {
 .operation {
   color: $color_2;
   padding: 18px;
+  max-width: 1440px;
 
   .number {
     display: flex;
@@ -245,6 +251,8 @@ header {
   margin-bottom: 20px;
   cursor: pointer;
   position: relative;
+  box-sizing: border-box;
+
 }
 
 .operation__text {
@@ -258,20 +266,26 @@ header {
 .restaurants {
   background-color: $background-color_4;
   padding: 18px;
+  max-width: 1440px;
 }
 
+@media (min-width: 1025px) {
+  .restaurants {
+    padding: 10%;
+  }
+}
 .card {
   border-radius: 15px;
   background-color: $background-color_5;
   margin-bottom: 15px;
   width: 100%;
   position: relative;
+  overflow: hidden;
 
   img {
     border-radius: 20px 20px 0px 0px;
     width: 100%;
     height: 230px;
-    -o-object-fit: cover;
     object-fit: cover;
     box-sizing: border-box;
   }
@@ -302,27 +316,27 @@ header {
 }
 
 .fa-heart {
-  background-color: $background-color_6;
+  background-color: url("https://cssgradient.io/gradient-backgrounds/?gradient=9356dc&gradient=ff79da&angle=193&type=linear&percentage=11.44,140");
   cursor: pointer;
   position: absolute;
-  bottom: 39px;
+  bottom: 36px;
   right: 28px;
 }
+
 
 @media (min-width: 767px) {
 
   .fa-heart {
     position: absolute;
-    bottom: 40px;
+   bottom: 40px;
     right: 28px;
   }
 }
 
 .heart-checkbox:checked+.heart-label::before {
   background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(228, 112, 218, 1) 100%);
-  -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+color: transparent;
 }
 
 .fa-heart:before {
@@ -342,13 +356,13 @@ header {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   position: absolute;
-  bottom: 25px;
+  bottom: 28px;
   right: 27px;
   color: transparent;
   font-size: 1.9em;
-  ;
   z-index: 5;
   cursor: pointer;
+  transition: background-color 0.5s ease;
 }
 
 @media (max-width: 768px) {
@@ -361,7 +375,6 @@ header {
     right: 27px;
     color: transparent;
     font-size: 1.9em;
-    ;
     z-index: 5;
   }
 }
@@ -462,6 +475,6 @@ footer ul {
 
 .fa-utensils,
 .fa-handshake-angle {
-  color: $white;
+  color: white;
   padding-right: 10px;
 }
