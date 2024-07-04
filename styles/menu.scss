@@ -160,6 +160,7 @@ nav {
         position: relative;
         right: 6rem;
         top: 0.5rem;
+        cursor: pointer;
     }
 }
 
@@ -173,6 +174,7 @@ nav {
     font-size: 1.2em;
     position: relative;
     transition: background-color 0.8s ease;
+    cursor: pointer;
 }
 
 
@@ -189,7 +191,7 @@ nav {
     right: 46px;
     color: transparent;
     font-size: 1.9em;
-    ;
+    cursor: pointer;
     z-index: 5;
 }
 
@@ -205,7 +207,7 @@ nav {
         left: 49px;
         color: transparent;
         font-size: 1.9em;
-        ;
+        cursor: pointer;
         z-index: 5;
     }
     .fa-heart {
@@ -213,6 +215,7 @@ nav {
         padding-left: 20px;
         position: relative;
         top: 0.5rem;
+        cursor: pointer;
     }
 }
 
