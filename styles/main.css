@@ -112,7 +112,7 @@ h1 {
   margin-top: 36px;
   color: #FFF;
   box-sizing: border-box;
-  margin-bottom: 50px;
+  margin-bottom: 34px;
   transition: all 0.7s ease;
 }
 
@@ -170,11 +170,16 @@ header {
 }
 
 .reservation__title {
-  font-size: 24px;
+  font-size: 25px;
   font-weight: 700;
   padding-top: 10px;
 }
 
+@media screen and (min-width: 1025px) {
+  .reservation__title {
+    font-size: 40px;
+  }
+}
 .reservation__subtitle {
   font-size: 18px;
   font-weight: 300;
@@ -200,7 +205,7 @@ header {
   top: 18px;
 }
 
-.operation__line {
+.operation ul {
   padding-left: 0;
   text-align: center;
   display: flex;
@@ -321,10 +326,10 @@ header {
   }
 }
 .heart-checkbox:checked + .heart-label::before {
-  background: linear-gradient(180deg, rgb(151, 71, 255) 0%, rgb(228, 112, 218) 100%);
+  background: linear-gradient(193deg, #9356DC -11.44%, #FF79DA 140%);
   -webkit-background-clip: text;
           background-clip: text;
-  transition: linear-gradient(193deg, #9356DC -11.44%, #FF79DA 140%) 10s ease-in-out;
+  transition: background 10s ease-in-out;
 }
 
 .fa-heart:before {
