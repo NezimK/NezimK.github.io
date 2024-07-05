@@ -433,7 +433,8 @@ Footer {
   
   .footer-container {
     display: flex;
-    justify-content: center;
+    padding-right: 50px;
+    padding-top: 20px;
     flex-direction: row-reverse;
   }
   
@@ -458,7 +459,7 @@ Footer {
     }
   
     #LogoFooter {
-      padding-left: 42px;
+      padding-left: 59px;
       padding-top: 5px;
     }
   }
