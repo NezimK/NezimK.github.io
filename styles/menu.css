@@ -190,6 +190,7 @@ nav {
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
+  transition: background 5s ease;
 }
 
 /****MENU***/

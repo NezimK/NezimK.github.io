@@ -224,6 +224,7 @@ nav {
     background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(228, 112, 218, 1) 100%);
     background-clip: text;
     color: transparent;
+    transition: background 5s ease;
 }
 
 /****MENU***/
