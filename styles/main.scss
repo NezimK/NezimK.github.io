@@ -249,6 +249,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 92%;
 }
 
@@ -265,19 +266,24 @@ header {
   .operation__button {
     width: 23%;
   }
-
+  .operation__line {
+    display: flex;
+    justify-content: center;
+  }
+  
   .operation ul {
     padding-left: 0;
     text-align: center;
     display: flex;
     flex-direction: row;
     justify-content: center;
-
+    align-items: center;
   }
+
 }
 
 .operation__button {
-  width: 100%;
+width: 26%;
   border-radius: 20px;
   background-color: $background-color_4;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
@@ -292,7 +298,11 @@ header {
   box-sizing: border-box;
 
 }
-
+@media screen and (max-width: 1025px) {
+  .operation__button {
+    width: 100%;
+  }
+}
 .operation__text {
   margin-left: 25px;
   font-size: 16px;
