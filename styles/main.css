@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /****** General *****/
 @keyframes loader-line-animation {
   0%, 40%, 100% {
@@ -331,33 +332,60 @@ header {
   font-weight: 500;
 }
 
-.fa-heart {
-  cursor: pointer;
-  position: absolute;
-  bottom: 36px;
-  right: 28px;
-}
-
 @media (min-width: 768px) {
   .fa-heart {
     position: absolute;
-    bottom: 40px;
-    right: 28px;
+    bottom: 0;
+    right: 0;
   }
 }
-.fa-regular {
-  font-weight: 400;
+.heart {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -50px;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 
-.full-heart {
+.heart-label {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+}
+
+.heart-icon {
+  font-size: 1.7rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+input {
+  display: none;
+}
+
+/* État initial du cœur */
+.heart-checkbox:not(:checked) + .heart-label .solid-heart {
   opacity: 0;
-  transition-property: all;
-  transition-duration: 1s;
+  transition: 1s;
 }
 
-.full-heart:hover {
+/* État cliqué du cœur */
+.heart-checkbox:checked + .heart-label .solid-heart {
   opacity: 1;
-  color: #9747ff;
+  background: linear-gradient(#ff79da 3%, #9356dc 120%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 1s;
+}
+
+/* Masquer l'icône régulière lorsque le cœur est cliqué */
+.heart-checkbox:checked + .heart-label .fa-regular {
+  opacity: 0;
 }
 
 /*******FOOTER******/

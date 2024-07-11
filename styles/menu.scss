@@ -54,7 +54,7 @@ a {
     display: flex;
 
     img {
-        width: 100vw;
+        width: 100%;
         height: 350px;
         object-fit: cover;
     }
@@ -102,6 +102,7 @@ header {
     padding-top: 25px;
     padding-bottom: 15px;
     height: 44px;
+    max-width: 1440px ;
 }
 
 
@@ -153,80 +154,61 @@ nav {
     }
 }
 
-@media screen and (max-width: 769px) {
-    .fa-heart {
-        padding-top: 35px;
-        padding-left: 20px;
-        position: relative;
-        right: 9rem;
-        top: 0.3rem;
-        cursor: pointer;
-    }
+
+.heart-label {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    top: 25px;
+    left: -105px;
 }
 
-.heart-checkbox {
+@media (min-width: 768px) {
+
+    .heart-label {
+        width: 28px;
+        height: 28px;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        top: 27px;
+        left: 25px;
+      }
+      
+  }
+  .heart-icon {
+    font-size: 1.7rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  input {
     display: none;
-}
-
-.fa-heart:before {
-    content: "\f004";
-    z-index: 1;
-    font-size: 1.2em;
-    position: relative;
-    transition: background-color 0.8s ease;
-    cursor: pointer;
-}
-
-
-.fa-regular {
-    font-weight: 400;
-}
-
-.heart-label::before {
-    content: '\f004';
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    position: relative;
-    top: 10px;
-    right: 94px;
-    color: transparent;
-    font-size: 1.9em;
-    cursor: pointer;
-    z-index: 5;
-}
-
-
-@media screen and (min-width: 769px) {
-
-    .heart-label::before {
-        content: '\f004';
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-        position: relative;
-        bottom: -10px;
-        left: 49px;
-        color: transparent;
-        font-size: 1.9em;
-        cursor: pointer;
-        z-index: 5;
-    }
-
-    .fa-heart {
-        padding-top: 35px;
-        padding-left: 20px;
-        position: relative;
-        top: 0.5rem;
-        cursor: pointer;
-    }
-}
-
-.heart-checkbox:checked+.heart-label::before {
-    background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(228, 112, 218, 1) 100%);
-    background-clip: text;
-    color: transparent;
-    transition: background 5s ease 5s;
-}
-
+  }
+  
+  /* État initial du cœur */
+  .heart-checkbox:not(:checked) + .heart-label .solid-heart {
+    opacity: 0;
+    transition: 1s;
+  }
+  
+  /* État cliqué du cœur */
+  .heart-checkbox:checked + .heart-label .solid-heart {
+    opacity: 1;
+    background: linear-gradient(#ff79da 3%, #9356dc 120%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 1s;
+  }
+  
+  /* Masquer l'icône régulière lorsque le cœur est cliqué */
+  .heart-checkbox:checked + .heart-label .fa-regular {
+    opacity: 0;
+  }
+  
 /****MENU***/
 
 @keyframes fadeInUp {
@@ -421,6 +403,7 @@ Footer {
     color: white;
     flex-direction: column;
     padding: 22px 20px;
+    max-width: 1440px;
   }
   
   footer ul {
