@@ -79,6 +79,12 @@ header {
   padding-bottom: 15px;
   height: 44px;
   max-width: 1440px;
+  position: relative;
+}
+
+.fa-arrow {
+  position: relative;
+  left: -128px;
 }
 
 #LogoHeader {
@@ -89,13 +95,13 @@ header {
 nav {
   padding-top: 10px;
   display: flex;
-  position: absolute;
   left: 30px;
+  position: absolute;
 }
 
 /******BODY*******/
 .container {
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -125,56 +131,43 @@ nav {
   padding-left: 22px;
 }
 
-.heart-label {
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
+.heart-icon {
+  font-size: 1.7rem;
   position: relative;
-  display: flex;
   top: 25px;
-  left: -105px;
+  right: 100px;
 }
 
 @media (min-width: 768px) {
-  .heart-label {
+  .heart-icon {
     width: 28px;
     height: 28px;
     cursor: pointer;
     position: relative;
     display: flex;
-    top: 27px;
-    left: 25px;
+    top: 28px;
+    left: 35px;
   }
 }
-.heart-icon {
-  font-size: 1.7rem;
-  position: absolute;
-  top: 0;
-  left: 0;
+.fa-regular {
+  background: transparent;
+  display: block;
 }
 
-input {
-  display: none;
-}
-
-/* État initial du cœur */
-.heart-checkbox:not(:checked) + .heart-label .solid-heart {
+.fa-solid {
+  background-color: transparent;
   opacity: 0;
-  transition: 1s;
-}
-
-/* État cliqué du cœur */
-.heart-checkbox:checked + .heart-label .solid-heart {
-  opacity: 1;
-  background: linear-gradient(#ff79da 3%, #9356dc 120%);
+  font-weight: 700;
+  background: linear-gradient(180deg, #FF79DA, #9356DC);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: 1s;
+  -moz-text-fill-color: transparent;
+  transition: opacity 0.5s ease-in-out;
 }
 
-/* Masquer l'icône régulière lorsque le cœur est cliqué */
-.heart-checkbox:checked + .heart-label .fa-regular {
-  opacity: 0;
+.fa-solid:hover {
+  cursor: pointer;
+  opacity: 1;
 }
 
 /****MENU***/
@@ -240,6 +233,7 @@ input {
   height: 69px;
   animation: fadeInLeft 0.7s ease forwards;
   animation-delay: 0.1s;
+  overflow: hidden;
 }
 
 .card-txt {
